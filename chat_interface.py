@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.agents import create_openai_functions_agent
 from langchain.agents import AgentExecutor
-from file_assistant import FileAssistant
+from ai_file_assistant import AIFileAssistant
 import os
 from dotenv import load_dotenv
 
@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def main():
-    # Initialize the FileAssistant
-    file_assistant = FileAssistant()
+    # Initialize the AIFileAssistant
+    file_assistant = AIFileAssistant()
     
     # Get the tools using the new method
     tools = file_assistant.get_tools()
@@ -34,12 +34,14 @@ def main():
     # Create the agent executor
     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
     
-    print("\nWelcome to FileAssistant! Type 'exit' to quit.")
+    print("\nWelcome to AIFileAssistant! Type 'exit' to quit.")
     print("Example commands:")
     print("- List all files in the current directory")
     print("- Create a new file called example.txt with content 'Hello!'")
     print("- Read the contents of requirements.txt")
-    print("- Create a directory named 'data' and add a file in it\n")
+    print("- Create a directory named 'data' and add a file in it")
+    print("- What's the most recently modified file?")
+    print("- Delete a specific file\n")
 
     while True:
         user_input = input("\nWhat would you like me to do? > ")

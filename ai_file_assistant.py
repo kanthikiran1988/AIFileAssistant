@@ -4,9 +4,9 @@ from pathlib import Path
 from langchain_core.tools import tool, StructuredTool
 from pydantic import BaseModel, Field
 
-class FileAssistant:
+class AIFileAssistant:
     def __init__(self, base_directory: str = "."):
-        """Initialize FileAssistant with a base directory."""
+        """Initialize AIFileAssistant with a base directory."""
         self.base_directory = Path(base_directory).resolve()
 
     def get_tools(self):
@@ -125,8 +125,7 @@ class FileAssistant:
         """
         target_dir = (self.base_directory / directory).resolve()
         target_dir.mkdir(parents=True, exist_ok=True)
-        return f"Successfully created directory {directory}" 
-    
+        return f"Successfully created directory {directory}"
 
     def find_latest_file(self, directory: str = '.') -> str:
         """
@@ -143,4 +142,4 @@ class FileAssistant:
             raise ValueError(f"Directory {directory} does not exist")
         
         latest_file = max(target_dir.glob('*'), key=os.path.getctime, default=None)
-        return str(latest_file.relative_to(self.base_directory)) if latest_file else 'No files found.'
+        return str(latest_file.relative_to(self.base_directory)) if latest_file else 'No files found.' 

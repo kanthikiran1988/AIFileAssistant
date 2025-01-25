@@ -1,4 +1,4 @@
-# FileAssistant
+# AIFileAssistant
 
 A Python-based intelligent file system assistant using LangChain and OpenAI's language models. This tool provides a natural language interface for common file operations, making it easy to manage files and directories through conversation.
 
@@ -26,8 +26,8 @@ A Python-based intelligent file system assistant using LangChain and OpenAI's la
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/FileAssistant.git
-   cd FileAssistant
+   git clone https://github.com/kanthikiran1988/AIFileAssistant.git
+   cd AIFileAssistant
    ```
 
 2. Create and activate a virtual environment:
@@ -48,9 +48,9 @@ A Python-based intelligent file system assistant using LangChain and OpenAI's la
 
 ## Usage
 
-Run the interactive assistant:
+Run the interactive chat interface:
 ```bash
-python example.py
+python chat_interface.py
 ```
 
 ### Example Commands
@@ -59,16 +59,16 @@ python example.py
 - Create file: "Create a new file called notes.txt with content 'Meeting at 3 PM'"
 - Read file: "Show me what's in requirements.txt"
 - Create directory: "Make a new folder called 'documents'"
-- Find latest file: "What's the most recently created file?"
+- Find latest file: "What's the most recently modified file?"
 - Delete file: "Delete the file test.txt"
 
-### Using FileAssistant in Your Code
+### Using AIFileAssistant in Your Code
 
 ```python
-from file_assistant import FileAssistant
+from ai_file_assistant import AIFileAssistant
 
-# Initialize FileAssistant
-assistant = FileAssistant(base_directory=".")
+# Initialize AIFileAssistant
+assistant = AIFileAssistant(base_directory=".")
 
 # List files in a directory
 files = assistant.list_files(".")
@@ -92,11 +92,11 @@ assistant.delete_file("old_file.txt")
 ## Project Structure
 
 ```
-FileAssistant/
-├── file_assistant.py   # Main FileAssistant class
-├── example.py         # Interactive chat interface
-├── requirements.txt   # Project dependencies
-├── .env              # Environment variables
+AIFileAssistant/
+├── ai_file_assistant.py  # Main AIFileAssistant class
+├── chat_interface.py    # Interactive chat interface
+├── requirements.txt    # Project dependencies
+├── .env               # Environment variables (create this)
 └── .gitignore        # Git ignore rules
 ```
 
